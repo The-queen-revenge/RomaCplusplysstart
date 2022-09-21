@@ -1,0 +1,3 @@
+C:/Users/demic/Desktop/For Programming/RomaCplusplysstart/cmake-build-debug/CMakeFiles/RomaCplusplysstart.dir
+C:/Users/demic/Desktop/For Programming/RomaCplusplysstart/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/demic/Desktop/For Programming/RomaCplusplysstart/cmake-build-debug/CMakeFiles/rebuild_cache.dir
