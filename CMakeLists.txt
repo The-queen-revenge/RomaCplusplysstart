@@ -3,4 +3,4 @@ project(RomaCplusplysstart)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(RomaCplusplysstart main.cpp "dz s blok shemoy.cpp" "dz_c_ sin and cos.cpp" stepic.cpp)
+add_executable(RomaCplusplysstart main.cpp "HoweWork/dz s blok shemoy.cpp" "HoweWork/dz_c_ sin and cos.cpp" stepic.cpp)
