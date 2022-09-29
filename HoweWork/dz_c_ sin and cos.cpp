@@ -2,7 +2,7 @@
 #include <cmath>
 #define M_PI 3.14159265358979323846
 using namespace std;
-int main() {
+int test_2() {
     int a;
     cin >> a;
     cout << "y1 = " << 2 * pow(sin(3 * M_PI - 2 * a), 2) * pow(cos(5 * M_PI + 2 * a), 2) << "\n";

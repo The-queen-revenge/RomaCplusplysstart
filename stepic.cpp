@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-int main() {
+int ma() {
     int n, h, m, s;
     cin >> n;
     h = n / 3600;
