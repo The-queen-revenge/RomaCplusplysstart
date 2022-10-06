@@ -1,13 +1,40 @@
 #include <iostream>
-#include <cmath>
-#include "my_lib.h"
+//#include "Lab2/16.cpp"
 using namespace std;
-int main() {
-    int a, b, c;
-    cout << "enter 3 numbers \n";
-    cin >> a;
-    cin >> b;
-    cin >> c;
-    f3(f2(f1(a, b, c)));
-    return 78787;
+int test_6() {
+    int h, w;
+    h = 1000;
+    w = h*2;
+    for(int c = 0; c <= h; c++){
+        for(int c1 = 1;c1 <= c;c1++){
+            cout << " ";
+        }
+        for(int c2 = 0; c2 <=c;c2++){
+            cout << "#";
+        }
+        for(int c3 = 1;c3 <= (h-c)*2;c3++){
+            cout << "  ";
+        }
+        for(int c4 = 0; c4 <=c;c4++){
+            cout << "#";
+        }
+        cout << "\n";
+
+    }
+    for(int c = h; c >= 0; c--){
+        for(int c1 = c;c1 > 0;c1--){
+            cout << " ";
+        }
+        for(int c2 = c; c2 >= 0;c2--){
+            cout << "#";
+        }
+        for(int c3 = (h-c)*2;c3 > 0;c3--){
+            cout << "  ";
+        }
+        for(int c4 = c; c4 >= 0;c4--){
+            cout << "#";
+        }
+        cout << "\n";
+    }
+    return 0;
 }
