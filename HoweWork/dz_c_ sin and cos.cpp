@@ -1,7 +1,8 @@
 #include <iostream>
 #include <math.h>
+using namespace std;
 double const pi = 4 * std::atan(1);
-int main()
+int test_11()
 {
     system("chcp 65001");
     float a, y1, y2, y3, y4;
@@ -13,12 +14,12 @@ int main()
     scanf_s("%f", &a);
     float rad = (a * (pi / 180));
     y1 = 2 * pow(sin(3 * pi - 2 * rad), 2) * pow(cos(5 * pi + 2 * rad), 2);
-    std::printf("y1 = % .4f \n", y1);
+    printf("y1 = % .4f \n", y1);
     y2 = 1 - 0.25 * pow(sin(2 * rad), 2) + cos(2 * rad);
-    std::printf("y2 = % .4f \n", y2);
+    printf("y2 = % .4f \n", y2);
     y3 = 0.25 - 0.25 * sin(0.625 * pi - 8 * rad);
-    std::printf("y3 = % .4f\n", y3);
+    printf("y3 = % .4f\n", y3);
     y4 = pow(cos(rad), 2) + pow(cos(rad), 4);
-    std::printf("y4 = % .4f \n", y4);
+    printf("y4 = % .4f \n", y4);
     system("pause");
 }

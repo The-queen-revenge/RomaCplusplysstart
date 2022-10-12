@@ -115,6 +115,12 @@ build CMakeFiles/RomaCplusplysstart.dir/IDZ/idz_s_massiv_2.cpp.obj: CXX_COMPILER
   OBJECT_DIR = CMakeFiles\RomaCplusplysstart.dir
   OBJECT_FILE_DIR = CMakeFiles\RomaCplusplysstart.dir\IDZ
 
+build CMakeFiles/RomaCplusplysstart.dir/HoweWork/dz_s_for.cpp.obj: CXX_COMPILER__RomaCplusplysstart_Debug C$:/Users/demic/Desktop/For$ Programming/RomaCplusplysstart/HoweWork/dz_s_for.cpp || cmake_object_order_depends_target_RomaCplusplysstart
+  DEP_FILE = CMakeFiles\RomaCplusplysstart.dir\HoweWork\dz_s_for.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\RomaCplusplysstart.dir
+  OBJECT_FILE_DIR = CMakeFiles\RomaCplusplysstart.dir\HoweWork
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target RomaCplusplysstart
@@ -123,7 +129,7 @@ build CMakeFiles/RomaCplusplysstart.dir/IDZ/idz_s_massiv_2.cpp.obj: CXX_COMPILER
 #############################################
 # Link the executable RomaCplusplysstart.exe
 
-build RomaCplusplysstart.exe: CXX_EXECUTABLE_LINKER__RomaCplusplysstart_Debug CMakeFiles/RomaCplusplysstart.dir/main.cpp.obj CMakeFiles/RomaCplusplysstart.dir/HoweWork/dz_s_blok_shemoy.cpp.obj CMakeFiles/RomaCplusplysstart.dir/HoweWork/dz_c__sin_and_cos.cpp.obj CMakeFiles/RomaCplusplysstart.dir/stepic.cpp.obj CMakeFiles/RomaCplusplysstart.dir/IDZ/idz1.cpp.obj CMakeFiles/RomaCplusplysstart.dir/IDZ/idz2.cpp.obj CMakeFiles/RomaCplusplysstart.dir/IDZ/idz3.cpp.obj CMakeFiles/RomaCplusplysstart.dir/IDZ/idz_s__while1.cpp.obj CMakeFiles/RomaCplusplysstart.dir/IDZ/idz_s_while2.cpp.obj CMakeFiles/RomaCplusplysstart.dir/IDZ/idz_s_massiv.cpp.obj CMakeFiles/RomaCplusplysstart.dir/IDZ/idz_s_massiv_2.cpp.obj
+build RomaCplusplysstart.exe: CXX_EXECUTABLE_LINKER__RomaCplusplysstart_Debug CMakeFiles/RomaCplusplysstart.dir/main.cpp.obj CMakeFiles/RomaCplusplysstart.dir/HoweWork/dz_s_blok_shemoy.cpp.obj CMakeFiles/RomaCplusplysstart.dir/HoweWork/dz_c__sin_and_cos.cpp.obj CMakeFiles/RomaCplusplysstart.dir/stepic.cpp.obj CMakeFiles/RomaCplusplysstart.dir/IDZ/idz1.cpp.obj CMakeFiles/RomaCplusplysstart.dir/IDZ/idz2.cpp.obj CMakeFiles/RomaCplusplysstart.dir/IDZ/idz3.cpp.obj CMakeFiles/RomaCplusplysstart.dir/IDZ/idz_s__while1.cpp.obj CMakeFiles/RomaCplusplysstart.dir/IDZ/idz_s_while2.cpp.obj CMakeFiles/RomaCplusplysstart.dir/IDZ/idz_s_massiv.cpp.obj CMakeFiles/RomaCplusplysstart.dir/IDZ/idz_s_massiv_2.cpp.obj CMakeFiles/RomaCplusplysstart.dir/HoweWork/dz_s_for.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\RomaCplusplysstart.dir
