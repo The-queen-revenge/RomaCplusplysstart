@@ -2,7 +2,7 @@
 using namespace std;
 const int n = 5;
 const int m = 10;
-int main() {
+int test_10() {
     system("chcp 65001");
     int mas[n][m];
     for(int i = 0; i < n; i++) {
