@@ -1,8 +1,8 @@
-#include <iostream>
+#include <iostream> // формулы для вычисления Y
 #include <math.h>
 using namespace std;
 double const pi = 4 * std::atan(1);
-int test_11()
+int test_14()
 {
     system("chcp 65001");
     float a, y1, y2, y3, y4;

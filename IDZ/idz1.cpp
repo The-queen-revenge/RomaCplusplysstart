@@ -1,7 +1,9 @@
+
+
 #include <iostream>
 #include <cmath>
 using namespace std;
-int test_3() {
+int test_1() {
     int n;
     cout << " enter for number \n";
     cin >> n;

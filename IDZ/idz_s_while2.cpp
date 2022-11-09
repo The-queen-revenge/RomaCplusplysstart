@@ -1,7 +1,7 @@
 #include <iostream>
 //#include "Lab2/16.cpp"
 using namespace std;
-int test_6() {
+int test_13() {
     int h, w;
     h = 1000;
     w = h*2;

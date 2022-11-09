@@ -1,8 +1,8 @@
-#include <iostream>
+#include <iostream> // времена года
 #include <Windows.h>
 class defoult;
 using namespace std;
-int test_4() {
+int test_2() {
     int n;
     cout << "enter for number \n";
     cin >> n;

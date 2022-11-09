@@ -1,6 +1,6 @@
 #include <iostream> // формирует и выводит целочисленный массив размера N, содержащий степени тройки от первой до N-й
 using namespace std;
-int test_8() {
+int test_37() {
     system("chcp 65001");
     cout << (" Введите n \n");
     int n;

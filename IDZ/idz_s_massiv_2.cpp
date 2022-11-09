@@ -1,9 +1,11 @@
-#include <iostream> // Преобразовать матрицу, поменяв местами минимальный и максимальный элемент в каждой строке.
+#include <iostream>// Преобразовать матрицу, поменяв местами минимальный и максимальный элемент в каждой строке.
+#include <time.h>
 using namespace std;
 const int n = 5;
 const int m = 10;
-int test_10() {
+int test_15() {
     system("chcp 65001");
+    srand(time (0));
     int mas[n][m];
     for(int i = 0; i < n; i++) {
         int min[2] = {0,101}, max[2] = {0,-1};
@@ -19,7 +21,7 @@ int test_10() {
                 max[0] = k;
             }
         }
-        swap(mas[i][min[0]],mas[i][max[0]]);
+        swap(mas[i][min[0]],mas[i][max[0]]); // меняет местами числа в строке
         cout << endl;
     }
     cout<<endl;
@@ -29,5 +31,4 @@ int test_10() {
         }
         cout << endl;
     }
-
 }

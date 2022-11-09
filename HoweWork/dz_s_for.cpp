@@ -1,14 +1,14 @@
-#include <iostream> // //Напечатать таблицу значений функции Y=X^2+1 с использованием определённого количество точек и во введенном диапазоне.
+#include <iostream>
 #include <iomanip>
 #include <string>
-const int Точки = 5;
+int Точки = 0;
 using namespace std;
-int main()
+int test_3()
 {
     system("chcp 65001");
-    printf("\n");printf("\n");
+    printf("\n");
     int min, max;
-    printf("Введите диапазон функции y=x*x+1\n");
+    printf("Введите диапазон и количество точек функции y=x*x+1\n");
     printf("По окончании ввода вам покажут таблицу \n");
     do
     {
@@ -17,6 +17,8 @@ int main()
         printf("\033[31mMax \033[0m");
         cin >> max;
     } while (max<min);
+    printf("\033[32mКоличество точек: \033[0m");
+    cin >> Точки;
     float c = 0;
     if (min<=0&&max<=0)
         c = min * -1 - max * -1;
@@ -24,7 +26,7 @@ int main()
         c = max - min;
     if (min <= 0 && max >= 0)
         c = min * -1 + max;
-    c = c / Точки;
+    c = c / (Точки-1);
     cout << "| " << setw(20) << left << "   X    " << setw(8) << "| " << setw(20) << " Y   " << setw(5) << "| "<< endl;
     cout << fixed;
     cout.precision(2);
