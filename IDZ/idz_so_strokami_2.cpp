@@ -1,7 +1,7 @@
 #include <iostream> // Даны строки S и S0. Удалить из строки S первую подстроку, совпадающую с S0. Если совпадающих подстрок нет, то вывести строку S без изменений.
 #include <string>
 using namespace std;
-int test_w()
+int testt_u()
 {
     string S, S0;
     cout << "String S:\n";
