@@ -1,14 +1,23 @@
 #include <iostream> // Дана строка-предложение на русском языке. Подсчитать количество содержащихся в строке знаков препинания.
+// проблемы с выводом через пробелы, проверить сin - проверил, все заработало
 using namespace std;
-int test_e()
+int омурмг()
 {
-    string s;
-    getline(cin, s);
-    int k = 0, pos = s.find_first_of(",!)(-.:;");
-    while(pos + 1){
-        ++k;
-        pos = s.find_first_of(",!)(-.:;", pos + 1);
+    system("chcp 65001");
+    int i;
+    int k=0;
+    char str[100];
+    cout << "Введите строку: \n";
+    cin.getline(str, 100);
+    cout << str << endl;
+    for(i = 0; i <=99; i++){
+        if((str[i] == '.') or (str[i] == ',') or (str[i] == ';') or (str[i] == ':') or (str[i] == '?') or (str[i] == '!') or (str[i] == '-')){
+            k+=1;
+        }
     }
     cout << k;
     return 0;
 }
+
+
+

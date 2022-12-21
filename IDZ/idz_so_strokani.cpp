@@ -1,13 +1,17 @@
 #include <iostream> // Дано целое число N (>0) и символ C. Вывести строку длины N, которая состоит из символов C.
-using namespace std;
-int test_u()
+using namespace std; // размерность char, как получить с помощью scanf char
+int ывыы()
 {
+    system("chcp 65001");
     int n, i = 0;
+    printf("Введите число >0 \n" );
     cin >> n;
     char c;
-    cin >> c;
+    printf("Введите символ C \n");
+    scanf("%d", &c);
     for(int i = 0; i < n; ++i){
         cout << c << " ";
     }
     return 0;
 }
+// char - занимает 1 байт памяти и хранит целое число, которое обозначает код символа в какой либо стандартной кодировке

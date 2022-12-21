@@ -1,26 +1,24 @@
 #include <iostream> // времена года
-#include <Windows.h>
-class defoult;
 using namespace std;
-int test_2() {
+int test_m() {
+    system("chcp 65001");
     int n;
-    cout << "enter for number \n";
+    cout << "Введите число  \n";
     cin >> n;
-    switch(n) {
-    case 12: case 1: case 2:
-        cout << "winter";
-        break;
-        case 3: case 4: case 5:
-            cout << "sprin";
-            break;
-        case 6: case 7: case 8:
-            cout << "outumn";
-            break;
-        case 9: case 10: case 11:
-            cout << "summer";
-            break;
-            defoult:
-                break;
+    if (n == 12 or n == 1 or n == 2){
+        cout << "Зима";
+    }
+    if (n == 3 or n == 4 or n == 5){
+        cout << "Весна";
+    }
+    if (n == 6 or n == 7 or n == 8){
+        cout << "Лето";
+    }
+    if (n == 9 or n == 10 or n == 11){
+        cout << "Осень";
+    }
+    else{
+        cout << "Error, введите новое число";
     }
     return 0;
-}
+  }

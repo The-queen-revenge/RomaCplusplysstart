@@ -1,113 +1,110 @@
-#include <iostream>// сначала создает массив, а потом сжимает его
-#include <stack>
-#include <stdio.h>
-using namespace std;
-/*void compress(int* ptr, int *sz, int cngN){
-    *sz = *sz - cngN;// новый размер
-    int *tmp = new int[*sz]();
-    for(int i = 0;i < *sz; i ++){
-        tmp[i] = ptr[i];
-    }
-    delete[]ptr;
-    ptr = new int[*sz]();
-    for(int i = 0; i < *sz; i++){
-        ptr[i] = tmp[i];
-    }
-    delete[] tmp;
-}
-int main() {
-    system("chcp 65001");
-    int D;
-    int SZ = 5;
-    int *mas = new int[SZ]{1, 2, 3, 4, 5,};
-    printf("оригинальный массив ");
-    for (int i = 0; i < SZ; i++) {
-        printf("%i", mas[i]);
-    }
-    cout << endl;
-    cout << "Введите число, на которое хотите сократить массив";
-    cin >> D;
-    compress(mas, &SZ, D);// при изменении cngN будет изменятся значение на которое массив будет сжат
-    printf("\n сжатый массив ");
-    for (int i = 0; i < SZ; i++) {
-        printf("%i", mas[i]);
-    }
-    return 0;
-}
-*/
-/*void expand(int* ptr, int *sz, int cngN){ // создает массив, а потом расширяет его на заданое значение (ячейки)
-    *sz = *sz + cngN;// новый размер
-    int *tmp = new int[*sz]();
-    for(int i = 0;i < *sz; i ++){
-        tmp[i] = ptr[i];
-    }
-    delete [] ptr;
-    ptr = new int[*sz]();
-    for(int i = 0; i < *sz; i++){
-        ptr[i] = tmp[i];
-    }
-    delete[] tmp;
-}
-int main(){
-    system("chcp 65001");
-    int SZ = 5;
-    int D;
-    int i = 0;
-    int *mas = new int[SZ]{1,2,3,4,5};
-    printf("Оригинальный массив ");
-    for(i = 0; i < SZ; i++){
-        printf("%i", mas[i]);
-    }
-    cout << endl;
-    cout << "Введите число, которое хотите добавить в массив";
-    cin >> D;
-    expand(mas, &SZ, D);
-    printf("\n увеличенный массив ");
-    for (int i = 0; i < SZ; i++) {
-        mas[i]=i;
-        printf("%i", mas[i]);
-    }
-    return 0;
-}
-*/
-/*int main() {
-    system("chcp 65001");
-    stack <int> steck;  // создаем стек
-    int i = 0;
-    cout << "Введите шесть любых целых чисел: " << endl;
-    while (i != 6) {
-        int a;
-        cin >> a;
-        steck.push(a);  // добавляем введенные числа
-        i++;
-    }
-    if (steck.empty()){
-        cout << "Стек пуст \n";  // проверяем пуст ли стек (нет)
-    }
-    cout << "Верхний элемент стека: " << steck.top() << endl;
-    cout << " Удалим верхний элемент " << endl;
-    steck.pop();  // удаляем верхний элемент
-    cout << " Новый верхний элемент: " << steck.top(); // выводим новый верхний элемент
-
-    return 0;
-}*/
-/* 1.Найти все делители целого положительного числа за оптимальное/минимальное количество итераций. Вывести количество затраченных итераций.
-int main(){
-    system("chcp 65001");
-    int x,d=1;
-    repeat:
-    puts("Введите положительное число: ");
-    scanf("%d",&x);
-
-    if (x<=0){
-        goto repeat;
-    }
-    for (d;d<=x;d++){
-        if (x%d==0){
-            if ((d!=x) and (d!=1)){
-                printf("Делитель: %i\n",d);
-            }
-        }
-    }
-}
- */
+//#include<stdio.h>
+//#include<iostream>
+//#include<locale.h>
+//
+//using namespace std;
+//
+//// ЭКСПЕРИМЕНТАЛЬНОЕ ИССЛЕДОВАНИЕ МЕТОДОВ РАСПРЕДЕЛЕНИЯ ПАМЯТИ
+//
+///*
+//   0) Исследовать адреса переменных внутрий функций (main, A1, B1, C1);
+//   1) Вывести адрес функции main
+//   2) Вывести адреса функций A1, B1, C1
+//   3) Создать функции D1 и E1, подобные по содержанию функциям A1, B1, C1
+//   4) Увеличить вложенность вызываемых функций.
+//        Пример: A1 -> B1 -> C1 -> D1 -> E1
+//   5) Вывести адреса вложенных функций.
+//*/
+//void E1()
+//{
+//    bool  n, * pn;
+//    int x, * px;
+//    n = true;
+//    x = 12;
+//    pn = &n;
+//    px = &x;
+//    printf("Функция E1\n");
+//
+//    printf(" bool n = %i\n int x = %i\n", n, x);
+//    printf("  -pn -> 0x%x\n  -px -> %p\n", pn, px);
+//}
+//void D1()
+//{
+//    bool  n, * pn;
+//    int x, * px;
+//    n = true;
+//    x = 12;
+//    pn = &n ;
+//    px = &x;
+//    E1();
+//    printf("Функция D1\n");
+//    printf(" bool n = %i\n int x = %i\n", n, x);
+//    printf("  -pn -> 0x%x\n  -px -> %p\n", pn, px);
+//}
+//void  C1(void)
+//{
+//    char  n, * pn;
+//    pn = &n;
+//    *pn = 'L';
+//    D1();
+//    printf("\nФункция C1\n");
+//    printf(" char n = %c\n", n);
+//    printf(" -pn -> %p\n", pn);
+//
+//}
+//void  B1(void)
+//{
+//    bool  n, * pn;
+//    int x, * px;
+//    n = true;
+//    x = 12;
+//    pn = &n;
+//    px = &x;
+//    C1();
+//    printf("Функция B1\n");
+//    printf(" bool n = %i\n int x = %i\n", n, x);
+//    printf("  -pn -> 0x%x\n  -px -> %p\n", pn, px);
+//}
+//
+//void  A1(void)
+//{
+//    char  n, * pn;
+//    float x, * px;
+//    n = 'Y';
+//    x = 5.43;
+//    pn = &n;
+//    px = &x;
+//    B1();
+//    printf("\nФункция A1\n");
+//
+//    printf(" char n = %c\n float x = %f\n", n, x);
+//    printf("  -pn -> %p\n  -px -> %p\n", pn, px);
+//}
+//
+//
+//
+//int main()
+//{
+//    setlocale(LC_ALL, "rus");
+//    char c, * pc;
+//    int n, * pn;
+//
+//    c = 'Z';
+//    n = 32767;
+//
+//    pc = &c;
+//    pn = &n;
+//
+//    A1();
+//    //C1();
+//
+//    printf("\nmain\n");
+//
+//    printf(" char c = %c\n int n = %i\n", c, n);
+//    printf(" -pc -> %p\n -pn -> %p\n\n Подпрограммы\n  -A1 -> %p\n  -B1 -> %p\n  -C1 -> %p\n -D1 -> %p\n -E1 -> %p", pc, pn, &A1, &B1, &C1, &D1, &E1);
+//
+//    printf("\n-main -> %p\n-A1 -> %p\n-B1 -> %p\n-C1 -> %p", &main,&A1,&B1,&C1);
+//
+//    return 0;
+//}
+//
