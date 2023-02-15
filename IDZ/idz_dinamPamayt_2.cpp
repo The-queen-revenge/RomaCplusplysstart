@@ -1,43 +1,48 @@
+// Строка обьявлена в куче. Находит слова в строке которые имеют чётную длину, начинаются и заканчиваются с заданным вводом символом
+// и выводит их на экран.
+
 #include <iostream>
-int main() {
-    char **strOfStr = new char*[16];
+#include <string>
+using namespace std;
 
-    for (unsigned i = 0; i < 16; i++) {
-        strOfStr[i] = new char[255];
+void RusConsoleOnWindows() { // функция для русского языка на Windows
+#ifndef __unix__ // директива препроцесса, если не Unix
+    // (директива препроцесса - инструкция, которую компилятор выполняет на стадии компилирования)
+    // Компиляция (программирование) — трансляция программы, составленной на исходном языке высокого уровня,
+    // в эквивалентную программу на низкоуровневом языке, близком машинному коду (абсолютный код, объектный модуль,
+    // иногда на язык ассемблера), выполняемая компилятором.
+    system("chcp 65001"); // команда в консоль для русского языка на Windows
+#endif
+}
 
-        for (unsigned k = 0; k < 255; k++)
-            strOfStr[i][k] = 0;
+int main(){
+    RusConsoleOnWindows(); // вызов функции для русского языка на Windows
 
-        std::cout << "Enter the string: ";
-        std::cin.getline(strOfStr[i], 255);
+    string str; // объявляем строку
+    cout << "Введите строку: "; // выводим на экран запрос
+    getline(cin, str); // получаем строку от пользователя
+    cout << "Введите символ начала слова: "; // выводим на экран запрос
+    char ch1, ch2; // объявляем переменные
+    cin >> ch1; // получаем символ от пользователя
+    cout << "Введите символ конца слова: "; // выводим на экран запрос
+    cin >> ch2; // получаем символ от пользователя
+
+    for (int i = 0; i < str.length(); i++){ // проходим по строке
+        while (str[i] == ' ') // если элемент строки равен пробелу
+            i++; // увеличиваем переменную на 1
+        int j = i; // присваиваем переменной j значение переменной i
+        while (str[j] != ' ' && j < str.length()) // если элемент строки не равен пробелу и переменная j меньше длины строки
+            j++; // увеличиваем переменную на 1
+        if ((j - i) % 2 == 0){ // если длина слова чётная
+            if (str[i] == ch1) { // если первый элемент строки равен символу ch1
+                if (str[j - 1] == ch2){ // если последний элемент строки равен символу ch2
+                    for (int k = i; k < j; k++) // проходим по строке
+                        cout << str[k]; // выводим на экран строку
+                    cout << endl; // делаем перенос строки
+                }
+            }
+        }
+        i = j; // присваиваем переменной i значение переменной j
     }
-
-    char firstSymbol, lastSymbol;
-
-    printf("Enter necessary first symbol and last by space, responsibility: ");
-    scanf("%s %s", &firstSymbol, &lastSymbol);
-
-    for (unsigned i = 0; i < 16; i++) {
-        unsigned len = 0;
-        char localFirstSymbol = strOfStr[i][0], localLastSymbol;
-
-        for (unsigned k = 0; k < 255; k++)
-            if (strOfStr[i][k] == 0) {
-                if (k != 0)
-                    localLastSymbol = strOfStr[i][k - 1];
-
-                break;
-            } else
-                len++;
-
-        if (firstSymbol == localFirstSymbol && lastSymbol == localLastSymbol && !(len % 2))
-            printf("Matching string: %s", strOfStr[i]);
-    }
-
-    for (unsigned i = 0; i < 16; i++)
-        delete[] strOfStr[i];
-
-    delete[] strOfStr;
-
     return 0;
 }

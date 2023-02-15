@@ -1,3 +1,7 @@
 C:/Users/demic/Desktop/For Programming/RomaCplusplysstart/cmake-build-debug/CMakeFiles/RomaCplusplysstart.dir
+C:/Users/demic/Desktop/For Programming/RomaCplusplysstart/cmake-build-debug/CMakeFiles/dz_c_for_1.dir
+C:/Users/demic/Desktop/For Programming/RomaCplusplysstart/cmake-build-debug/CMakeFiles/idz_s_struct.dir
+C:/Users/demic/Desktop/For Programming/RomaCplusplysstart/cmake-build-debug/CMakeFiles/idz_dinamPamayt_1.dir
+C:/Users/demic/Desktop/For Programming/RomaCplusplysstart/cmake-build-debug/CMakeFiles/idz_dinamPamayt_2.dir
 C:/Users/demic/Desktop/For Programming/RomaCplusplysstart/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/demic/Desktop/For Programming/RomaCplusplysstart/cmake-build-debug/CMakeFiles/rebuild_cache.dir

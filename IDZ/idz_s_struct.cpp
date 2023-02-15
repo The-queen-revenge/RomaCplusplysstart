@@ -1,47 +1,98 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h> // библиотека для ввода и вывода
+#include <stdlib.h> // библиотека для работы с памятью
 
 
-typedef struct Date {
-    unsigned year;
-    unsigned month;
-    unsigned day;
+void RusConsoleOnWindows() { // функция для русского языка на Windows
+    #ifndef __unix__ // директива препроцесса, если не Unix
+    // Директива препроцесса - инструкция, которую компилятор выполняет на стадии компилирования.
+    // Компиляция (программирование) — трансляция программы, составленной на исходном языке высокого уровня,
+    // в эквивалентную программу на низкоуровневом языке, близком машинному коду (абсолютный код, объектный модуль,
+    // иногда на язык ассемблера), выполняемая компилятором.
+        system("chcp 65001"); // команда в консоль для русского языка на Windows
+    #endif
+}
+
+typedef struct Date { // структура для хранения даты
+    unsigned year; // год
+    unsigned month; // месяц
+    unsigned day; // день
 } Date;
 
+int dayscount(unsigned year1, unsigned month1, unsigned day1, unsigned year2, unsigned month2, unsigned day2) {
+    // функция для подсчета количества дней между датами
 
-unsigned ask_user(const char *text, const unsigned min, const unsigned max) {
-    while (1) {
-        unsigned userData;
-        printf("%s", text);
-        scanf("%d", &userData);
+    unsigned days1 = 0; // количество дней в первой дате
+    unsigned days2 = 0; // количество дней во второй дате
 
-        if (userData >= min && userData <= max)
-            return userData;
+    for (unsigned i = 1; i < year1; i++) { // цикл для подсчета количества дней в первой дате
+        if ((i % 4 == 0 and i % 100 != 0) or (i % 400 == 0 and i % 100 == 0)) { // проверка на високосный год
+            days1 += 366; // если високосный, то прибавляем 366 дней
+        } else { // если не високосный
+            days1 += 365; // прибавляем 365 дней
+        }
     }
+    for (unsigned i = 1; i < month1; i++){ // цикл для подсчета количества дней в первой дате
+        if (i == 1 or i == 3 or i == 5 or i == 7 or i == 8 or i == 10 or i == 12) { // проверка на месяцы с 31 днем
+            days1 += 31; // если месяц с 31 днем, то прибавляем 31 день
+        } else if (i == 2) { // если февраль
+            if ((year1 % 4 == 0 and year1 % 100 != 0) or (year1 % 400 == 0 and year1 % 100 == 0)) { // проверка на високосный год
+                days1 += 29; // если високосный, то прибавляем 29 дней
+            } else { // если не високосный
+                days1 += 28; // прибавляем 28 дней
+            }
+        } else { // если месяц с 30 днями
+            days1 += 30; // прибавляем 30 дней
+        }
+    }
+    days1 += day1; // прибавляем количество дней в первой дате
+
+    for (unsigned i = 1; i < year2; i++) { // цикл для подсчета количества дней во второй дате
+        if ((i % 4 == 0 and i % 100 != 0) or (i % 400 == 0 and i % 100 == 0)) { // проверка на високосный год
+            days2 += 366; // если високосный, то прибавляем 366 дней
+        } else { // если не високосный
+            days2 += 365; // прибавляем 365 дней
+        }
+    }
+    for (unsigned i = 1; i < month2; i++){ // цикл для подсчета количества дней во второй дате
+        if (i == 1 or i == 3 or i == 5 or i == 7 or i == 8 or i == 10 or i == 12) { // проверка на месяцы с 31 днем
+            days2 += 31; // если месяц с 31 днем, то прибавляем 31 день
+        } else if (i == 2) { // если февраль
+            if ((year2 % 4 == 0 and year2 % 100 != 0) or (year2 % 400 == 0 and year2 % 100 == 0)) { // проверка на високосный год
+                days2 += 29; // если високосный, то прибавляем 29 дней
+            } else { // если не високосный
+                days2 += 28; // прибавляем 28 дней
+            }
+        } else { // если месяц с 30 днями
+            days2 += 30; // прибавляем 30 дней
+        }
+    }
+    days2 += day2; // прибавляем количество дней во второй дате
+    return days2 - days1; // возвращаем разницу между датами
+
+
+}
+int main() { // главная функции
+
+    RusConsoleOnWindows(); // вызов функции для русского языка на Windows
+
+    unsigned year, month, day; // переменные для хранения года, месяца и дня
+    printf("Введите первую дату в формате год, месяц, день \n"); // вывод сообщения
+    scanf("%d %d %d", &year, &month, &day); // ввод данных
+    Date date1; // создание объекта date1
+    date1.year = year; // присваивание значения переменной year объекту date1
+    date1.month = month; // присваивание значения переменной month объекту date1
+    date1.day = day; // присваивание значения переменной day объекту date1
+
+    printf("Введите вторую дату в формате год, месяц, день \n"); // вывод сообщения
+    scanf("%d %d %d", &year, &month, &day); // ввод данных
+    Date date2; // создание объекта date2
+    date2.year = year; // присваивание значения переменной year объекту date2
+    date2.month = month; // присваивание значения переменной month объекту date2
+    date2.day = day; // присваивание значения переменной day объекту date2
+    printf("Количество дней между датами: %d \n",
+    dayscount(date1.year, date1.month, date1.day,date2.year, date2.month, date2.day));
+    // вывод сообщения
+    return 0; // возвращаем 0
 }
 
 
-int main() {
-    Date d1, d2;
-
-    d1.year = ask_user("Enter year of first date: ", 1500, 2500);
-    d1.month = ask_user("Enter month of first date: ", 1, 12);
-    d1.day = ask_user("Enter day of first date: ", 1, 31);
-
-    d2.year = ask_user("Enter year of second date: ", 1500, 2500);
-    d2.month = ask_user("Enter month of second date: ", 1, 12);
-    d2.day = ask_user("Enter day of second date: ", 1, 31);
-
-    unsigned firstDays = d1.year * 365 + d1.month * 31 + d1.day, secondDays = d2.year * 365 + d2.month * 31 + d2.day;
-
-    if (firstDays > secondDays)
-        printf("The second date precedes the first\n");
-    else if (firstDays < secondDays)
-        printf("The first date precedes the second\n");
-    else
-        printf("Its the same dates\n");
-
-    printf("Difference in days: %d\n", abs((int)(firstDays - secondDays)));
-
-    return 0;
-}

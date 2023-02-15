@@ -3,43 +3,46 @@
 // Заполнить его случайными значениями из диапазона 0÷20. Определить количество различных элементов в массиве.
 #include <random>
 using namespace std;
+// сколько разных чисел он сгенерировал(каждого значений)!!!!!!!
 random_device rd; // В этом блоке создаем рандомные значения, согласно документации Microsoft
 mt19937 gen(rd()); // сид
 uniform_int_distribution<> dist(0, 20); // Генерируем случайные числа в диапазоне от 0, до 20
 
-int main() {
-    int *array = new int[200];
-    for(unsigned i = 0; i < 200; i++) {
-        array[i] = dist(gen);
-        printf("%d\t", array[i]);
+int main() { // главная функция
+    int mas[20]; // создаем массив
+    for(int i = 0; i < 20; i++){ // заполняем массив нулями
+        mas[i] = 0; // заполняем массив нулями
     }
-    printf("\n");
-    int *numberArray = new int[21];
-    for(unsigned i = 0; i < 21; i++){
-        numberArray[i] = -1;
+    int *array = new int[200]; // создаем массив
+    for(unsigned i = 0; i < 200; i++) { // заполняем массив рандомными значениями
+        array[i] = dist(gen); // заполняем массив рандомными значениями
+        mas[array[i] - 1] += 1; // заполняем массив рандомными значениями
+        printf("%d\t", array[i]); // выводим на экран массив
     }
-    for (unsigned i = 0; i < 200; i++)
-        for (unsigned k = 0; k < 21; k++)
-            if (array[i] == numberArray[k])
-                break;
-            else if (k == 20 && array[i] != numberArray[k])
-                for (unsigned j = 0; j < 21; j++)
-                    if (numberArray[j] == -1) {
-                        numberArray[j] = array[i];
-                        break;
+    printf("\n"); // делаем перенос строки
+    int *numberArray = new int[21]; // создаем массив
+    for(unsigned i = 0; i < 21; i++){ // проходим по массиву
+        numberArray[i] = -1; // заполняем массив -1
+    }
+    for (unsigned i = 0; i < 200; i++) // проходим по массиву
+        for (unsigned k = 0; k < 21; k++) // проходим по массиву
+            if (array[i] == numberArray[k]) // если элемент массива равен элементу массива
+                break; // прерываем цикл
+            else if (k == 20 && array[i] != numberArray[k]) // если элемент массива не равен элементу массива
+                for (unsigned j = 0; j < 21; j++) // проходим по массиву
+                    if (numberArray[j] == -1) { // если элемент массива равен -1
+                        numberArray[j] = array[i]; // присваиваем элементу массива numberArray значение элемента массива array
+                        break; // прерываем цикл
                     }
 
-    int unique = 0;
-
-    for (unsigned i = 0; i < 21; i++)
-        if (numberArray[i] != -1)
-            unique++;
-
-    printf("Number of unique values: %d", unique);
-
-    delete[] numberArray;
-    delete[] array;
-
-    return 0;
+    int unique = 0; // создаем переменную
+    for (unsigned i = 0; i < 21; i++) // проходим по массиву
+        if (numberArray[i] != -1) // если элемент массива не равен -1
+            unique++; // увеличиваем переменную на 1
+    for(int i = 0; i < 20; i++){ // проходим по массиву
+        cout << i+1 << ": " << mas[i] << " | "; // выводим на экран массив
+    }
+    delete[] array; // удаляем массив
+    return 0; // возвращаем 0
 
 }

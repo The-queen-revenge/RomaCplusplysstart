@@ -11,7 +11,7 @@ int hdvu(){
     switch (c)
     {
         case 'K':
-            float r, S,P;
+            float r ;
             printf("Введите радиус r >= 1 \n");
             scanf("%f", &r);
             if(r < 0){
