@@ -1,4 +1,4 @@
-#include <stdio.h> // библиотека для ввода и вывода
+/*#include <stdio.h> // библиотека для ввода и вывода
 #include <stdlib.h> // библиотека для работы с памятью
 
 
@@ -71,7 +71,7 @@ int dayscount(unsigned year1, unsigned month1, unsigned day1, unsigned year2, un
 
 
 }
-int main() { // главная функции
+int heuch() { // главная функции
 
     RusConsoleOnWindows(); // вызов функции для русского языка на Windows
 
@@ -96,3 +96,4 @@ int main() { // главная функции
 }
 
 
+*/
